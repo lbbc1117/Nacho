@@ -8,44 +8,44 @@ class CMatrix {
 
 public:
 
-	CMatrix(int m, int n);			 //¹¹½¨Ò»¸öm*nµÄÈ«Áã¾ØÕó
-	CMatrix(int n);					 //¹¹½¨Ò»¸ön*nµÄÈ«Áã¾ØÕó
-	CMatrix(const CMatrix &);		 //¿½±´¹¹Ôìº¯Êı£¬Éî¿½±´                  
-									 //²»Ìá¹©ÎŞ²ÎÊı¹¹Ôìº¯ÊıCMatrix()
+	CMatrix(int m, int n);			 //æ„å»ºä¸€ä¸ªm*nçš„å…¨é›¶çŸ©é˜µ
+	CMatrix(int n);					 //æ„å»ºä¸€ä¸ªn*nçš„å…¨é›¶çŸ©é˜µ
+	CMatrix(const CMatrix &);		 //æ‹·è´æ„é€ å‡½æ•°ï¼Œæ·±æ‹·è´                  
+									 //ä¸æä¾›æ— å‚æ•°æ„é€ å‡½æ•°CMatrix()
 	~CMatrix();
 
-	static bool printWhenCreateAndDelete;	//¿ØÖÆÊÇ·ñ´òÓ¡¹¹ÔìÓëÎö¹¹
+	static bool printWhenCreateAndDelete;	//æ§åˆ¶æ˜¯å¦æ‰“å°æ„é€ ä¸ææ„
 
-	int getRowNum() const;					//·µ»Ø¾ØÕóµÄĞĞÊı
-	int getColNum() const;					//·µ»Ø¾ØÕóµÄÁĞÊı
-	bool getTransState() const;				//·µ»Ø¾ØÕóµÄ×ªÖÃ×´Ì¬
+	int getRowNum() const;					//è¿”å›çŸ©é˜µçš„è¡Œæ•°
+	int getColNum() const;					//è¿”å›çŸ©é˜µçš„åˆ—æ•°
+	bool getTransState() const;				//è¿”å›çŸ©é˜µçš„è½¬ç½®çŠ¶æ€
 
-	CMatrix trans() const;					//½«¾ØÕó×ªÖÃ
-	double norm() const;					//Çó½â¾ØÕóF·¶Êı
-	double get(int i, int j) const;			//·µ»Ø¾ØÕóµÚiĞĞjÁĞÔªËØ
-	void set(int i, int j, double val);		//ÉèÖÃ¾ØÕóµÚiĞĞjÁĞÔªËØÎªval
-	void diagUnitize();						//½«·½Õó¶Ô½ÇÏßÔªËØÈ«²¿ÉèÖÃÎª1
-	void clear();							//½«¾ØÕóËùÓĞÔªËØÉèÖÃÎªÁã
+	CMatrix trans() const;					//å°†çŸ©é˜µè½¬ç½®
+	double norm() const;					//æ±‚è§£çŸ©é˜µFèŒƒæ•°
+	double get(int i, int j) const;			//è¿”å›çŸ©é˜µç¬¬iè¡Œjåˆ—å…ƒç´ 
+	void set(int i, int j, double val);		//è®¾ç½®çŸ©é˜µç¬¬iè¡Œjåˆ—å…ƒç´ ä¸ºval
+	void diagUnitize();						//å°†æ–¹é˜µå¯¹è§’çº¿å…ƒç´ å…¨éƒ¨è®¾ç½®ä¸º1
+	void clear();							//å°†çŸ©é˜µæ‰€æœ‰å…ƒç´ è®¾ç½®ä¸ºé›¶
 
-	CMatrix operator +(const CMatrix &mat);	 //Á½¸ö¾ØÕóÏà¼Ó
-	CMatrix operator -(const CMatrix &mat);	 //Á½¸ö¾ØÕóÏà¼õ
-	CMatrix operator *(const CMatrix &mat);	 //Á½¸ö¾ØÕóÏà³Ë
-	CMatrix operator *(const double f);		 //¾ØÕó³ËÒÔ³£Êı
-	CMatrix operator /(const double f);		 //¾ØÕó³ıÒÔ³£Êı
-	CMatrix operator ^(const double f);		 //¾ØÕóÔªËØ·Ö±ğÇóÃİ
-	void operator =(const CMatrix &mat);	 //½«Ò»¸ö¾ØÕó¸³¸øÁíÒ»¸ö
+	CMatrix operator +(const CMatrix &mat);	 //ä¸¤ä¸ªçŸ©é˜µç›¸åŠ 
+	CMatrix operator -(const CMatrix &mat);	 //ä¸¤ä¸ªçŸ©é˜µç›¸å‡
+	CMatrix operator *(const CMatrix &mat);	 //ä¸¤ä¸ªçŸ©é˜µç›¸ä¹˜
+	CMatrix operator *(const double f);		 //çŸ©é˜µä¹˜ä»¥å¸¸æ•°
+	CMatrix operator /(const double f);		 //çŸ©é˜µé™¤ä»¥å¸¸æ•°
+	CMatrix operator ^(const double f);		 //çŸ©é˜µå…ƒç´ åˆ†åˆ«æ±‚å¹‚
+	void operator =(const CMatrix &mat);	 //å°†ä¸€ä¸ªçŸ©é˜µèµ‹ç»™å¦ä¸€ä¸ª
 
 private:
 
-	double *start;		//Ö¸Ïò¾ØÕóÊ×ÔªËØµÄÖ¸Õë
-	int rowNum;			//¾ØÕóĞĞÊı
-	int colNum;			//¾ØÕóÁĞÊı
+	double *start;		//æŒ‡å‘çŸ©é˜µé¦–å…ƒç´ çš„æŒ‡é’ˆ
+	int rowNum;			//çŸ©é˜µè¡Œæ•°
+	int colNum;			//çŸ©é˜µåˆ—æ•°
 
-	bool isTransposed;	//¼ÇÂ¼¾ØÕóÊÇ·ñ×ªÖÃ
-	void rowColSwap();	//×ªÖÃÊ±ÓÃÓÚ½»»»row_numÓëcol_numµÄÖµ
+	bool isTransposed;	//è®°å½•çŸ©é˜µæ˜¯å¦è½¬ç½®
+	void rowColSwap();	//è½¬ç½®æ—¶ç”¨äºäº¤æ¢row_numä¸col_numçš„å€¼
 };
 
-//ÔÚ¿ØÖÆÌ¨ÒÔ¹æ·¶µÄ¸ñÊ½´òÓ¡¾ØÕó
+//åœ¨æ§åˆ¶å°ä»¥è§„èŒƒçš„æ ¼å¼æ‰“å°çŸ©é˜µ
 ostream & operator <<(ostream &, const CMatrix &);
 
 #endif
