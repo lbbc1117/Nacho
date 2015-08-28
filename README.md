@@ -5,7 +5,7 @@ Define a matrix instance with zeros:
 ```cpp
 CMatrix mat = CMatrix(rowNum, colNum);  // demensions : rowNum*colNum
 CMatrix mat = CMatrix(n);  // demensions : n*n
-CMatrix mat = anotherMat;  // demension : same as the right CMatrix
+CMatrix mat = anotherMat;  // demensions : same as the right CMatrix
 ```
 Set the element at 2nd row and 3rd column to 1.5:
 ```cpp
