@@ -27,13 +27,13 @@ public:
 	void diagUnitize();				//将方阵对角线元素全部设置为1
 	void clear();					//将矩阵所有元素设置为零
 
-	CMatrix operator +(const CMatrix &mat);	 //两个矩阵相加
-	CMatrix operator -(const CMatrix &mat);	 //两个矩阵相减
-	CMatrix operator *(const CMatrix &mat);	 //两个矩阵相乘
-	CMatrix operator *(const double f);	 //矩阵乘以常数
-	CMatrix operator /(const double f);	 //矩阵除以常数
-	CMatrix operator ^(const double f);	 //矩阵元素分别求幂
-	void operator =(const CMatrix &mat);	 //将一个矩阵赋给另一个
+	CMatrix operator +(const CMatrix &mat);	 	//两个矩阵相加
+	CMatrix operator -(const CMatrix &mat);	 	//两个矩阵相减
+	CMatrix operator *(const CMatrix &mat);	 	//两个矩阵相乘
+	CMatrix operator *(const double f);	 	//矩阵乘以常数
+	CMatrix operator /(const double f);	 	//矩阵除以常数
+	CMatrix operator ^(const double f);	 	//矩阵元素分别求幂
+	void operator =(const CMatrix &mat);	 	//将一个矩阵赋给另一个
 
 private:
 
