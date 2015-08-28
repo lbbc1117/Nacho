@@ -53,7 +53,7 @@ CMatrix mat = mat1 * mat2;
 ```
 Multiplication with single number:
 ```cpp
-CMatrix mat = mat1 * 1.5;
+CMatrix mat = mat1 * 1.5; // not commutative
 ```
 Division:
 ```cpp
@@ -63,3 +63,6 @@ Exponentiation:
 ```cpp
 CMatrix mat = mat1 ^ 1.5;
 ```
+## Test
+Some test methods have been declared in CTest.h and defined in CTest.cpp. 
+These methods print test information on console.
